@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
+const accommodationRoutes = require('./routes/accommodationRoutes');
+
 
 dotenv.config();
 const app = express();
@@ -16,6 +18,8 @@ mongoose.connection.on("error", err =>{
 app.use(express.json());
 
 app.use('/api/users', userRoutes);
+app.use('/api/accommodations', accommodationRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
