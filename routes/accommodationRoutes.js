@@ -11,3 +11,4 @@ router.put('/:id',authMiddleware,  accommodationController.updateAccommodation);
 router.delete('/:id',authMiddleware,  accommodationController.deleteAccommodation);
 
 module.exports = router;
+
